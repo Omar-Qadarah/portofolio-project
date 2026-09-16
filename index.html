@@ -23,12 +23,13 @@
     </header>
     <main>
         <article class="hero">
-            <div class="hero-t">
+            <div class="orb"></div>
+            <div class="hero-t l-text">
                 <h1>Hello</h1>
                 <p>I'm Omar, a Web Developer with a civil engineering past. I'm obsessed with turning messy problems into clean, working solutions — a habit I picked up designing water systems, now aimed at code. Powered almost entirely by epic food and video games.</p>
                 <a href="#about" class="btn">Know more about me</a>
             </div>
-            <div class="hero-img">
+            <div class="hero-img r-img">
                 <img src="./img/me.png" alt="">
             </div>
         </article>
@@ -60,46 +61,75 @@
         </article>
         
         <article id="about" class="about">
-            <div>
-                
-                <h2>About me</h2>
+            <div class="right-left">
+                <div class="l-text">
+                    <h2>About me</h2>
 
-                <p>
-                    Hey! I'm <span><strong>Omar</strong></span> 👋
-                    <br><br>
-                    I'm a web developer in training at Orange Coding Academy, where I'm turning my curiosity for technology into real projects and practical skills.
-                    <br><br>
-                    I love creating websites that look good, feel smooth, and are easy to use. I'm always experimenting, learning something new, and looking for the next thing to build.
-                    <br><br>
-                    Still learning. Still building. Always improving. 🚀
-                </p>
+                    <p>
+                        Hey! I'm <span><strong>Omar</strong></span> <span class="hand">👋</span>
+                        <br><br>
+                        I'm a web developer in training at Orange Coding Academy, where I'm turning my curiosity for technology into real projects and practical skills.
+                        <br><br>
+                        I love creating websites that look good, feel smooth, and are easy to use. I'm always experimenting, learning something new, and looking for the next thing to build.
+                        <br><br>
+                        Still learning. Still building. Always improving. 🚀
+                    </p>
+                </div>
+                <div class="r-img">
+                    <img src="./img/about.png" alt="">
+                </div>
             </div>
         </article>
         
         <article id="contact" class="contact">
-            <div>
-                <h2> Let's Connect</h2>
-               <p>
-                    Got an idea?<br>
-                    Want to collaborate?<br>
-                    Or just want to say hi?<br><br>
+            <div class="right-left">
+                <div class="l-text">
+                 
+                    <h2> Let's Connect</h2>
+                    <p>
+                        Got an idea?<br>
+                        Want to collaborate?<br>
+                        Or just want to say hi?<br><br>
 
-                    Let's talk! 👋<br><br>
+                        Let's talk! 👋<br><br>
 
-                    You can find me on GitHub and LinkedIn, or send me an email. <br><br>
+                        You can find me on GitHub and LinkedIn, or send me an email. <br><br>
 
-                    Let's create something awesome together.
-                </p>
-               
+                        Let's create something awesome together.
+                    </p>
+                   
+                </div>
+                <div>
+                    <form id="contact" class="form">
+                        <div class="field">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name">
+                        </div>
+
+                        <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+                        </div>
+
+                        <div class="field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" placeholder="What's on your mind?"></textarea>
+                        </div>
+
+                        <button type="submit">Send message</button>
+                        <p class="status" id="status" role="status"></p>
+                    </form>
+                </div>
             </div>
         </article>
     </main>
     <footer class="footer">
         <p>&copy Omar Qadarah</p>
         <ul class="footer-list">
-            <li>📧 Email: omarqadarah1@gmail.com</li>
-            <li>📱 Phone: +962 79 853 6044|| +962 77 922 7304</li>
-            <li>💻 GitHub: github.com/Omar-Qadarah</li>
+            <li><a href="mailto:omarqadarah1@gmail.com">📧 omarqadarah1@gmail.com</a></li>
+            <li><a href="tel:+962798536044">📱 +962 79 853 6044</a></li>
+            <li><a href="tel:+962779227304">📱 +962 77 922 7304</a></li>
+            <li><a href="https://github.com/Omar-Qadarah" target="_blank" rel="noopener">💻 github.com/Omar-Qadarah</a></li>
         </ul>
         
     </footer>
