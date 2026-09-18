@@ -25,7 +25,17 @@
         0 1px 3px rgba(124, 28, 241,06),
         0 1px 3px rgba(124, 28, 241,0.4)
     );
+    /* ========form======= */
 
+    --surface: light-dark(    #fffdf8 ,#16182b);
+    --text: light-dark(    #1b1c2b ,#ece9e2);
+    --muted: light-dark(    #5c5e74 ,#9294ad);
+    --accent: light-dark(     #a8650d,#f5b33c);
+    --line: light-dark(    rgba(27, 28, 43, 0.18) ,rgba(236, 233, 226, 0.14));
+    --line-soft: light-dark(    rgba(27, 28, 43, 0.08) ,rgba(236, 233, 226, 0.07));
+    --focus-ink: light-dark(    #fffdf8 ,#0f1020);
+    
+    /* ====spaces and sizes===== */
     --text-sm: 14px;
     --text-md: 16px;
     --text-lg: 24px;
@@ -37,18 +47,7 @@
 
     --m-1: 8px;
     --m-2: 16px;
-    --m-3: 32px;
-
-    /* ========form======= */
-
-    --surface: light-dark(    #fffdf8 ,#16182b);
-    --text: light-dark(    #1b1c2b ,#ece9e2);
-    --muted: light-dark(    #5c5e74 ,#9294ad);
-    --accent: light-dark(     #a8650d,#f5b33c);
-    --line: light-dark(    rgba(27, 28, 43, 0.18) ,rgba(236, 233, 226, 0.14));
-    --line-soft: light-dark(    rgba(27, 28, 43, 0.08) ,rgba(236, 233, 226, 0.07));
-    --focus-ink: light-dark(    #fffdf8 ,#0f1020);
-
+    --m-3: 32px; 
 }
 @keyframes float{
     0%{
@@ -165,7 +164,7 @@ img{
     justify-content: space-between;
 
 }
-.r-img{
+.r-img.hero-img{
     width:400px;
     margin-right: var(--m-2);
 }
@@ -174,6 +173,7 @@ img{
     height: 100%;
     border-radius: 18px;
 }
+
 .l-text{
     width:500px;
     font-size: var(--text-md);
@@ -204,11 +204,10 @@ h2{
     text-align: center;
     padding: var(--p-4);
     max-width: 1000px;
-
 }
 .card-grid{
     display: grid;
-    grid-template-columns: repeat(2,minmax(400px,1fr));
+    grid-template-columns: repeat(3,minmax(0,1fr));
     gap: var(--p-2);
     padding: var(--p-4);
     max-width: 1400px;
@@ -217,7 +216,7 @@ h2{
     margin: 0 auto;
 }
 .card{
-    width: 400px;
+    max-width: 400px;
     padding: var(--p-2);
     border:var(--card-border) 2px solid;
     border-radius: var(--p-2);
@@ -240,6 +239,9 @@ h2{
 .about,.contact{
     font-size: 1.5em;
 }
+.r-img.about-img{
+    max-width: 50%;    
+}
 .form{
     font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     background: var(--surface);
@@ -247,8 +249,13 @@ h2{
     border-radius: 16px;
     padding: 2rem 1.75rem;
     width: 500px;
+    min-width: 300px;
+    flex:1 1 auto;
     transition: border-color 0.25s;
     box-shadow: var(--box-shadow);
+}
+.contact-t{
+    flex:1 1 auto;
 }
 .form:hover{
     border-color: var(--card-border-hover);
@@ -336,9 +343,16 @@ button:hover{
 }
 @media (max-width: 1023px){
     .hero,.right-left{
-        flex-direction: column;
         gap: var(--m-3);
         padding: var(--m-3);
+    }
+    .nav-list{
+        display: none;
+    }
+    .header{
+        background-color: transparent;
+        filter: none;
+        position: static;
     }
     .l-text,.r-img,.form,.card{
         width: 100%;
@@ -354,6 +368,7 @@ button:hover{
     .moto{
         padding: var(--m-3);
     }
+
     .footer{
         height: auto;
         padding: var(--m-3);
@@ -366,12 +381,19 @@ button:hover{
     .orb{
         display:none;
     }
+    .nav-list{
+        display: none;
+    }
     .header{
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: var(--p-1);
-        font-size: var(--text-md);
-        padding: var(--p-1) var(--m-2);
+        background-color: transparent;
+        filter: none;
+        position: static;
+        padding: var(--m-1);
+    }
+    .hero,.right-left{
+        flex-direction: column;
+        gap: var(--m-3);
+        padding: var(--m-3);
     }
     .icon{
         margin-right: 0;
@@ -382,8 +404,12 @@ button:hover{
     .card-grid{
         grid-template-columns: 1fr;
     }
+    .about-img{
+        min-width: 300px;
+    }
     .form{
-        padding: var(--m-2);
+        padding: var(--m-1);
+        width: auto;
     }
     .about,.contact{
         font-size: 1.1em;
@@ -397,10 +423,8 @@ button:hover{
         padding: var(--m-2);
         text-align: center;
     }
-    .footer-list li:not(:last-child)::after{
-        display: none;
-    }
+   
     .footer-list li{
-        word-break: break-word;
+        overflow-wrap: anywhere;    
     }
 }
